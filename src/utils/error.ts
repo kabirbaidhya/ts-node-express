@@ -6,7 +6,7 @@ import * as HttpStatus from 'http-status-codes';
  * @param  {error} err
  * @return {array|object}
  */
-export function buildError(err) {
+export function buildError(err: any) {
   // Validation errors
   if (err.isJoi || err instanceof SyntaxError) {
     return {
@@ -14,7 +14,7 @@ export function buildError(err) {
       message: HttpStatus.getStatusText(HttpStatus.BAD_REQUEST),
       details:
         err.details &&
-        err.details.map(error => {
+        err.details.map((error: any) => {
           return {
             message: error.message,
             param: error.path

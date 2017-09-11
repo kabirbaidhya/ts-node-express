@@ -1,4 +1,5 @@
 import * as url from 'url';
+import { Request } from 'express';
 
 /**
  * Returns url.
@@ -6,7 +7,7 @@ import * as url from 'url';
  * @param req
  * @returns {string}
  */
-export function getFullUrl(req) {
+export function getFullUrl(req: Request) {
   return url.format({
     protocol: req.protocol,
     host: req.get('host'),

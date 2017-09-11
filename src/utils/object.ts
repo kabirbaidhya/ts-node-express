@@ -7,10 +7,10 @@ import { differenceBy, intersectionBy } from 'lodash';
  * @param  {Array} attrsToExclude
  * @return {Object}
  */
-export function withoutAttrs(obj, attrsToExclude) {
-  const result = {};
+export function withoutAttrs(obj: any, attrsToExclude: any[]) {
+  const result: any = {};
 
-  Object.keys(obj).forEach(key => {
+  Object.keys(obj).forEach((key: string) => {
     if (!attrsToExclude.includes(key)) {
       result[key] = obj[key];
     }
@@ -26,8 +26,8 @@ export function withoutAttrs(obj, attrsToExclude) {
  * @param  {Array} attrs
  * @return {Object}
  */
-export function withOnlyAttrs(obj, attrs) {
-  const result = {};
+export function withOnlyAttrs(obj: any, attrs: any[]) {
+  const result: any = {};
 
   Object.keys(obj).forEach(key => {
     if (attrs.includes(key)) {
@@ -47,7 +47,7 @@ export function withOnlyAttrs(obj, attrs) {
  * @param {String} key
  * @returns {Object}
  */
-export function difference(list1, list2, key = 'id') {
+export function difference(list1: any[], list2: any[], key = 'id') {
   return {
     create: list2
       .filter(obj => obj.hasOwnProperty(key) && obj[key] === null)

@@ -19,7 +19,7 @@ if (!fs.existsSync(path)) {
  * @param {Object} options
  * @returns {String}
  */
-function formatter(options) {
+function formatter(options: any) {
   const logLevel = winston.config.colorize(
     options.level,
     options.level.toUpperCase()
