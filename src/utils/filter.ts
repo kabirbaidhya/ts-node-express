@@ -4,7 +4,7 @@
  * @param obj
  * @returns {*}
  */
-export function emptyToNull(obj) {
+export function emptyToNull(obj: any): any {
   if (isScalarType(obj)) {
     return obj;
   }
@@ -13,7 +13,7 @@ export function emptyToNull(obj) {
     return obj.map(emptyToNull);
   }
 
-  const result = {};
+  const result: any = {};
 
   for (const key of Object.keys(obj)) {
     const value = obj[key];
@@ -34,7 +34,7 @@ export function emptyToNull(obj) {
  * @param obj
  * @returns {boolean}
  */
-function isScalarType(obj) {
+function isScalarType(obj: any) {
   return (
     typeof obj !== 'object' ||
     obj instanceof String ||
@@ -50,7 +50,7 @@ function isScalarType(obj) {
  * @param value
  * @returns {*}
  */
-function nullIfEmpty(value) {
+function nullIfEmpty(value: any) {
   if (typeof value !== 'string') {
     return value;
   }
