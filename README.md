@@ -22,18 +22,24 @@ You'll need to run migrations to get your database ready.
 $ yarn migrate
 ```
 
-## Running locally
+## Local Development
+Run the server locally using nodemon on typescript watch mode.
 ```bash
 $ yarn start # or npm start
 ```
 
-## Building for Production
+## Production
+First, build the application.
+
 ```bash
 $ yarn build # or npm run build
 ```
 
-## Starting the Server
-You can use [`pm2`](https://github.com/Unitech/pm2) to start the once you built the application.
+Then, use [`pm2`](https://github.com/Unitech/pm2) to start the application as a service.
+
 ```bash
 $ yarn service:start # or npm run service:start
 ```
+
+## License
+Licensed under [MIT](LICENSE) License.
