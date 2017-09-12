@@ -20,6 +20,7 @@ You'll need to run migrations to get your database ready.
 ```bash
 # Run Migrations and seeds
 $ yarn migrate
+```
 
 ## Running locally
 ```bash
@@ -29,4 +30,10 @@ $ yarn start # or npm start
 ## Building for Production
 ```bash
 $ yarn build # or npm run build
+```
+
+## Starting the Server
+You can use [`pm2`](https://github.com/Unitech/pm2) to start the once you built the application.
+```bash
+$ yarn service:start # or npm run service:start
 ```
