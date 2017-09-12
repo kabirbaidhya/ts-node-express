@@ -8,17 +8,16 @@
     "lint:fix": "tslint --fix -c tslint.json 'src/**/*.ts'; exit 0",
     "codecov": "cat coverage/*/lcov.info | codecov",
     "transpile": "tsc",
-    "transpile:w": "tsc --watch",
     "clean": "rimraf dist",
     "build": "NODE_ENV=production run-s clean transpile",
     "migrate": "knex migrate:latest",
     "migrate:make": "knex migrate:make",
     "migrate:rollback": "knex migrate:rollback",
     "test": "NODE_ENV=test mocha --recursive --require babel-register test",
-    "serve": "nodemon dist/index.js",
-    "watch": "run-p transpile:w serve",
-    "start": "run-s transpile watch",
-    "test:coverage": "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive --require babel-register --colors --reporter spec test",
+    "watch": "tsc --watch",
+    "start": "nodemon",
+    "test:coverage":
+      "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive --require babel-register --colors --reporter spec test",
     "service:start": "pm2 start ecosystem.config.js",
     "service:reload": "pm2 reload ecosystem.config.js",
     "service:startup": "pm2 startup",
@@ -45,9 +44,7 @@
     "starter"
   ],
   "private": true,
-  "authors": [
-    "Kabir Baidhya <kabirbaidhya@gmail.com>"
-  ],
+  "authors": ["Kabir Baidhya <kabirbaidhya@gmail.com>"],
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.80.0",
@@ -114,6 +111,7 @@
     "prettier": "^1.6.0",
     "rimraf": "^2.6.1",
     "supertest": "^3.0.0",
+    "ts-node": "^3.3.0",
     "tsc": "^1.20150623.0",
     "tslint": "^5.7.0",
     "typescript": "^2.5.2"
