@@ -15,9 +15,6 @@ import * as errorHandler from './middlewares/errorHandler';
 
 const app = express();
 
-app.locals.title = config.app.name;
-app.locals.version = config.app.version;
-
 app.use(favicon(path.join(__dirname, '/../public', 'favicon.ico')));
 app.use(cors());
 app.use(helmet());

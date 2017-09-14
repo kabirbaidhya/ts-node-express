@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import * as homeService from '../services/home';
 
 /**
  * Gets the API information.
@@ -7,8 +8,7 @@ import { Request, Response } from 'express';
  * @param {Response} res
  */
 export function getAppInfo(req: Request, res: Response) {
-  res.json({
-    app: req.app.locals.title,
-    apiVersion: req.app.locals.version
-  });
+  const result = homeService.getAppInfo();
+
+  res.json(result);
 }
