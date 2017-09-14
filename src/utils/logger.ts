@@ -31,15 +31,19 @@ function formatter(options: any) {
   return `${options.timestamp()}  [ ${logLevel} ]  ${message}  ${meta}`;
 }
 
-// Create a logger using the configuration.
-const logger = new winston.Logger({
-  transports: [
+const transports = [];
+
+// Add transports if not test environment.
+if (!config.app.isTestEnvironment) {
+  transports.push(
     new winston.transports.Console({
       level,
       formatter,
       timestamp,
       colorize: true
-    }),
+    })
+  );
+  transports.push(
     new winston.transports.DailyRotateFile({
       level,
       maxFiles,
@@ -49,8 +53,11 @@ const logger = new winston.Logger({
       datePattern: 'yyyy-MM-dd',
       filename: `${path}/-log.log`
     })
-  ]
-});
+  );
+}
+
+// Create a logger using the configuration.
+const logger = new winston.Logger({ transports });
 
 /**
  * A writable stream for winston logging.

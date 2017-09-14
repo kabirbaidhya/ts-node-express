@@ -3,7 +3,8 @@ import * as pkg from '../../package.json';
 
 dotenv.config();
 
-const PORT = process.env.NODE_ENV === 'test' ? 8888 : process.env.PORT || 8080;
+const isTestEnvironment = process.env.NODE_ENV === 'test';
+const PORT = (isTestEnvironment && 8888) || process.env.PORT || 8080;
 
 export default {
   app: {
@@ -14,7 +15,8 @@ export default {
     baseUrl: process.env.API_BASE_URL,
     port: PORT,
     templatePath: `${__dirname}/../templates`,
-    staticPath: process.env.STATIC_PATH || 'api-static'
+    staticPath: process.env.STATIC_PATH || 'api-static',
+    isTestEnvironment
   },
   logging: {
     path: process.env.LOGGING_DIR || 'logs',

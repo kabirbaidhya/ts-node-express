@@ -1,6 +1,8 @@
 import 'mocha';
-import app from '../../../src/index';
-import { expect, request } from '../chai';
+import { expect } from 'chai';
+import * as request from 'supertest';
+
+import app from '../../src/index';
 
 describe('/', () => {
   describe('GET', () => {
@@ -9,7 +11,7 @@ describe('/', () => {
         .get('/')
         .end((err, res) => {
           expect(err).to.equal(null);
-          expect(res).to.status(200);
+          expect(res.status).to.equal(200);
           done();
         });
     });
