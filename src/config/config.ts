@@ -3,6 +3,8 @@ import * as pkg from '../../package.json';
 
 dotenv.config();
 
+const PORT = process.env.NODE_ENV === 'test' ? 8888 : process.env.PORT || 8080;
+
 export default {
   app: {
     name: (pkg as any).name,
@@ -10,7 +12,7 @@ export default {
     description: (pkg as any).description,
     host: process.env.APP_HOST,
     baseUrl: process.env.API_BASE_URL,
-    port: process.env.PORT || 8080,
+    port: PORT,
     templatePath: `${__dirname}/../templates`,
     staticPath: process.env.STATIC_PATH || 'api-static'
   },

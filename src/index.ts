@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '/../public')));
 
 // API Routes
-app.use('/api', routes);
+app.use('/', routes);
 
 // Error Middlewares
 app.use(errorHandler.genericErrorHandler);
@@ -39,3 +39,5 @@ logger.debug('Debug logs are enabled');
 app.listen(config.app.port, () =>
   logger.info(`Listening on port ${config.app.port}`)
 );
+
+export default app;

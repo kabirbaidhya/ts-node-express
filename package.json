@@ -13,9 +13,8 @@
     "migrate": "knex migrate:latest",
     "migrate:make": "knex migrate:make",
     "migrate:rollback": "knex migrate:rollback",
-    "test": "NODE_ENV=test mocha -r ts-node/register test/**/*.test.ts",
-    "test:watch":
-      "NODE_ENV=test mocha --watch -r ts-node/register test/**/*.test.ts",
+    "test": "NODE_ENV=test mocha",
+    "test:watch": "NODE_ENV=test mocha --watch",
     "test:coverage":
       "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive --require babel-register --colors --reporter spec test",
     "watch": "tsc --watch",
@@ -83,6 +82,7 @@
     "@types/body-parser": "^1.16.5",
     "@types/boom": "^4.3.7",
     "@types/chai": "^4.0.4",
+    "@types/chai-http": "^3.0.3",
     "@types/cors": "^2.8.1",
     "@types/dotenv": "^4.0.1",
     "@types/helmet": "^0.0.36",
@@ -103,6 +103,7 @@
     "@types/winston": "^2.3.5",
     "babel-register": "^6.24.1",
     "chai": "^4.0.0",
+    "chai-http": "^3.0.0",
     "codecov": "^2.2.0",
     "eslint": "^3.19.0",
     "husky": "^0.13.4",
