@@ -40,6 +40,25 @@ Then, use [`pm2`](https://github.com/Unitech/pm2) to start the application as a 
 ```bash
 $ yarn service:start # or npm run service:start
 ```
+## Testing
+Running all tests.
+```bash
+# Running all tests.
+$ yarn test
+
+# Running all tests in watch mode.
+$ yarn test:watch
+```
+
+Running all API tests (Acceptance Tests).
+```bash
+$ yarn test:api
+```
+
+Running all Unit Tests.
+```bash
+$ yarn test:unit
+```
 
 ## License
 Licensed under [MIT](LICENSE) License.
