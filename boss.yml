@@ -1,0 +1,40 @@
+project_name: ts-node-express
+project_description: 'TypeScript NodeJS Starter Project'
+repository_url: 'https://github.com/kabirbaidhya/ts-node-express'
+branch_url: '{repository_url}/tree/{branch}'
+port: 3022
+ssh_forward_agent: true
+verbose_logging: false
+remote_env_injection: true
+remote_env_path: '~/app.env'
+
+deployment:
+  preset: remote-source
+  base_dir: /home/app/remote-source-test
+  include_files: ['package.json', 'package-lock.json', 'yarn.lock', 'pm2.config.js']
+
+stages:
+  foo:
+    host: foobar.localhost
+
+scripts:
+  install: 'yarn'
+  install_remote: 'yarn'
+  build: 'yarn build'
+  logs: 'pm2 logs'
+  status_check: 'pm2 info api'
+#  start: 'pm2 startOrReload current/pm2.config.js'
+#  stop: 'pm2 stop current/pm2.config.js'
+#  reload: 'pm2 reload pm2.config.js'
+  reload: 'pm2 reload pm2.config.js'
+  start_or_reload: 'pm2 startOrReload pm2.config.js'
+#  list_services: 'pm2 list pm2.config.js'
+  list_services: 'pm2 list pm2.config.js'
+#notified_hooks:
+#  scripts: ['reload']
+
+notifications:
+  slack:
+    enabled: true
+    endpoint: /T1JUS2Q2V/B4ULRGFBN/SbS6YY7FcYU1gabDct5hBxkw
+
