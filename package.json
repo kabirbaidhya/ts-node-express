@@ -17,8 +17,7 @@
     "test:unit": "NODE_ENV=test mocha --recursive test/unit/**/*.test.ts",
     "test:api": "NODE_ENV=test mocha --recursive test/api/**/*.test.ts",
     "test:watch": "NODE_ENV=test mocha --watch --recursive test/**/*.test.ts",
-    "test:coverage":
-      "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive --require babel-register --colors --reporter spec test",
+    "test:coverage": "NODE_ENV=test istanbul cover node_modules/mocha/bin/_mocha -- --recursive --require babel-register --colors --reporter spec test",
     "watch": "tsc --watch",
     "start": "nodemon",
     "service:start": "pm2 start ecosystem.config.js",
@@ -47,7 +46,9 @@
     "starter"
   ],
   "private": true,
-  "authors": ["Kabir Baidhya <kabirbaidhya@gmail.com>"],
+  "authors": [
+    "Kabir Baidhya <kabirbaidhya@gmail.com>"
+  ],
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.80.0",
