@@ -18,9 +18,6 @@ stages:
     host: foobar.localhost
 
 scripts:
-  install: 'yarn'
-  install_remote: 'yarn'
-  build: 'yarn build'
   logs: 'pm2 logs'
   status_check: 'pm2 info api'
   start: 'pm2 startOrReload current/pm2.config.js'
