@@ -46,7 +46,9 @@
     "starter"
   ],
   "private": true,
-  "authors": ["Kabir Baidhya <kabirbaidhya@gmail.com>"],
+  "authors": [
+    "Kabir Baidhya <kabirbaidhya@gmail.com>"
+  ],
   "license": "MIT",
   "dependencies": {
     "aws-sdk": "^2.80.0",
