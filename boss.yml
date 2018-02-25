@@ -9,6 +9,7 @@ remote_env_injection: true
 remote_env_path: '~/test/app.env'
 
 deployment:
+  smart_install: true
   preset: node
   base_dir: /home/app/deployment
   include_files: ['package.json', 'package-lock.json', 'yarn.lock', 'pm2.config.js']
