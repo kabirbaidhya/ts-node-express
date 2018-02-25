@@ -1,4 +1,4 @@
-# TypeScript NodeJS Starter Project
+# TypeScript Node Starter Project
 
 Starter Project for TypeScript, NodeJS and Express.
 
