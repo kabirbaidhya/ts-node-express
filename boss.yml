@@ -23,12 +23,7 @@ scripts:
   start: 'pm2 startOrReload current/pm2.config.js'
   stop: 'pm2 stop current/pm2.config.js'
   reload: 'pm2 reload current/rm2.config.js'
-#  reload: 'pm2 reload pm2.config.js'
-#  start_or_reload: 'pm2 startOrReload pm2.config.js'
-#  list_services: 'pm2 list pm2.config.js'
   list_services: 'pm2 list current/pm2.config.js'
-#notified_hooks:
-#  scripts: ['reload']
 
 notifications:
   slack:
