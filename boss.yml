@@ -27,6 +27,6 @@ scripts:
 
 notifications:
   slack:
-    enabled: false
+    enabled: true
     endpoint: /T1JUS2Q2V/B4ULRGFBN/SbS6YY7FcYU1gabDct5hBxkw
 
