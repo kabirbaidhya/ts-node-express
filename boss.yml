@@ -5,8 +5,6 @@ branch_url: '{repository_url}/tree/{branch}'
 port: 3022
 ssh_forward_agent: true
 verbose_logging: false
-remote_env_injection: true
-remote_env_path: '~/test/app.env'
 
 deployment:
   preset: node
