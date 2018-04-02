@@ -51,7 +51,6 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "aws-sdk": "^2.80.0",
     "babel-polyfill": "^6.26.0",
     "bcrypt": "^1.0.2",
     "body-parser": "^1.17.2",
